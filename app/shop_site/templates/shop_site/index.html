@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Amadon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+   button{
+    margin-bottom:20px;
+   }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Amadon</h1>      
+    <p>Buy Many Things</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">                      
+      </button>
+      <a class="navbar-brand" href="#">Irreverent Novelties</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Unicorn Squishie</div>
+        <div class="panel-body"><img src="https://i.imgur.com/WTEXEuD.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Slow Rising Pegasus Scented Soft Squishie <br> $14.99</div>
+      </div>
+      <form action="/process" method="POST">
+        {% csrf_token %}
+      <button type="submit" class="btn btn-danger" name="unicorn">Add To Cart</button>
+    </form>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">Giant Eraser</div>
+        <div class="panel-body"><img src="https://i.imgur.com/w2W9Hru.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Novelty Eraser for Big Mistakes, Pink Color <br> $6.99</div>
+      </div>
+      <form action="/process" method="POST">
+        {% csrf_token %}
+      <button type="submit" class="btn btn-danger" name="eraser">Add To Cart</button></form>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">Donald Trump Toilet Paper</div>
+        <div class="panel-body"><img src="https://i.imgur.com/1HutpVL.jpgE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">3 rolls Donald Trump Toilet Paper, 250 sheets per roll <br> $5.50</div>
+      </div>
+      <form action="/process" method="POST">
+        {% csrf_token %}
+      <button type="submit" class="btn btn-danger" name="tp">Add To Cart</button>
+    </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Egg Splat Squishy Toys</div>
+        <div class="panel-body"><img src="https://i.imgur.com/ZHpY9qJ.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Stress Relief Egg Yolk Balls, Pack of 4 <br> $9.99</div>
+      </div>
+      <form action="/process" method="POST">
+        {% csrf_token %}
+       <button type="submit"  class="btn btn-danger" name="eggball">Add To Cart</button>
+     </form>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Pikachu Electronic Coin Piggy Bank</div>
+        <div class="panel-body"><img src="https://i.imgur.com/QT3MRod.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Limited Edition Coin Bank with Sound <br> $17.99</div>
+      </div>
+      <form action="/process" method="POST">
+        {% csrf_token %}
+      <button type="submit" class="btn btn-danger" name="bank">Add To Cart</button>
+    </form>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Sushi Cat Key Chain Collectible Figures</div>
+        <div class="panel-body"><img src="https://i.imgur.com/MYNDc8X.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Five different sushi cats with detachable key ring <br> $9.99</div> </div>
+        <form action="/process" method="POST">
+        {% csrf_token %}
+      <button type="submit" class="btn btn-danger" name="catsushi">Add To Cart</button>
+    </form>
+     
+
+    </div>
+  </div>
+</div><br><br>
+
+<footer class="container-fluid text-center">
+  <p>Go to Shopping Cart</p>  
+  <form class="form-inline" action="/checkout" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Cart</button>
+  </form>
+</footer>
+
+</body>
+</html>
